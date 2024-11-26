@@ -16,7 +16,7 @@ function Table({ PageSize = 5 }) {
         const firstPageIndex = (currentPage - 1) * PageSize;
         const lastPageIndex = firstPageIndex + PageSize;
         return infoList?.infoDetails?.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage, infoList]);
+    }, [currentPage, infoList,PageSize]);
 
     useEffect(() => {
         setInfoList({
