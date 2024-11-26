@@ -2,10 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import PaginationComp from './PaginationComp';
 
 
-const customTableStyle = {
-    fontWeight: '500',
-    backgroundColor: '#fafafa'
-}
+
 
 function Table({ PageSize = 5 }) {
 
@@ -51,7 +48,7 @@ function Table({ PageSize = 5 }) {
     return (
         <section style={{ width: '80%', display: 'flex', justifyContent: 'center', flexDirection:'column' }}>
             <table className='custom-table'>
-                <thead style={customTableStyle}>
+                <thead className='custom-head-style' >
                     <tr>
                         <th>S.No.</th>
                         <th>Percentage funded</th>
@@ -72,7 +69,6 @@ function Table({ PageSize = 5 }) {
             </table>
             <br/>
             <PaginationComp 
-                className="pagination-bar"
                 currentPage={currentPage}
                 totalCount={infoDetails?.length}
                 pageSize={PageSize}

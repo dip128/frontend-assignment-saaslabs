@@ -1,6 +1,6 @@
 import React from 'react'
 import classnames from 'classnames';
-import { DOTS, usePagination } from '../customHooks/usePagination';
+import { DOTS, pageCountUtil } from '../utils';
 
 const PaginationComp = props => {
   const {
@@ -9,10 +9,9 @@ const PaginationComp = props => {
     siblingCount = 1,
     currentPage,
     pageSize,
-    className
   } = props;
 
-  const paginationRange = usePagination({
+  const paginationRange = pageCountUtil({
     currentPage,
     totalCount,
     siblingCount,
@@ -35,7 +34,7 @@ const PaginationComp = props => {
   let lastPage = paginationRange[paginationRange?.length - 1];
   return (
     <ul
-      className={classnames('pagination-container', { [className]: className })}
+      className='pagination-container'
     >
        
       <li
@@ -66,6 +65,7 @@ const PaginationComp = props => {
         className={classnames('pagination-item', {
           disabled: currentPage === lastPage
         })}
+        disabled= {currentPage === lastPage}
         onClick={onNext}
       >
         <div className="arrow right" />

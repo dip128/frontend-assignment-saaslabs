@@ -17,6 +17,11 @@ tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
 
+.custom-head-style {
+   font-weight: 500;
+   background-color: #fafafa;
+}
+
 .custom-table {
   width: 100%;
   border-collapse: collapse;
